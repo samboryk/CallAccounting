@@ -1,3 +1,5 @@
+package com.example.callaccounting;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +20,7 @@ public class AbonentAdapter extends RecyclerView.Adapter<AbonentAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(androidx.cardview.R.layout.support_simple_spinner_dropdown_item, parent, false); // тимчасово
-        // TODO: замінити пізніше на нормальний layout
+                .inflate(R.layout.item_abonent, parent, false);
         return new ViewHolder(view);
     }
 
@@ -41,9 +42,9 @@ public class AbonentAdapter extends RecyclerView.Adapter<AbonentAdapter.ViewHold
 
         ViewHolder(View itemView) {
             super(itemView);
-            phoneText = itemView.findViewById(android.R.id.text1);
-            innText = itemView.findViewById(android.R.id.text1);
-            addressText = itemView.findViewById(android.R.id.text1);
+            phoneText = itemView.findViewById(R.id.tv_phone);
+            innText = itemView.findViewById(R.id.tv_inn);
+            addressText = itemView.findViewById(R.id.tv_address);
         }
     }
 }

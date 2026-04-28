@@ -1,3 +1,5 @@
+package com.example.callaccounting;
+
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -15,5 +17,10 @@ public class Abonent {
         this.phoneNumber = phoneNumber;
         this.inn = inn;
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return phoneNumber;
     }
 }

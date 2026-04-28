@@ -1,3 +1,5 @@
+package com.example.callaccounting;
+
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -15,5 +17,10 @@ public class City {
         this.name = name;
         this.dayTariff = dayTariff;
         this.nightTariff = nightTariff;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }

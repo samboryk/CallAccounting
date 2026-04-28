@@ -1,3 +1,5 @@
+package com.example.callaccounting;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,8 +34,9 @@ public class CallAdapter extends RecyclerView.Adapter<CallAdapter.ViewHolder> {
 
         String abonentInfo = abonent != null ? abonent.phoneNumber : "Невідомий";
         String cityName = city != null ? city.name : "Невідоме місто";
-
-        double tariff = call.timeOfDay.equals("День") ? city.dayTariff : city.nightTariff;
+        double dayTariff = city != null ? city.dayTariff : 0.0;
+        double nightTariff = city != null ? city.nightTariff : 0.0;
+        double tariff = "День".equals(call.timeOfDay) ? dayTariff : nightTariff;
         double cost = call.minutes * tariff;
 
         holder.dateText.setText(call.date);
